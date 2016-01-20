@@ -64,7 +64,6 @@ dbo.fHtmEq(ra,decl) as htmid
 ,SUBSTRING([sedfilename],1,4) as sedfiletype
 -- geography::STPointFromText('POINT(' + str([ra],20,16)+ ' ' + str([decl],20,16) + ')', 4326) as geopoint -- not used in new tables
 FROM StagingStar s
-CROSS APPLY dbo.fHtmEqToXyz(ra, decl) as xyz
 GO
 
 /* Note: More readable way to cross apply table valued htm functions
